@@ -1,0 +1,32 @@
+<html>
+<head>
+
+<title>JavaScript Project 2</title>
+<script type="text/javascript"src="/Users/Mazen/Downloads/Cs1011 assignemnt 3/KS.js"></script>
+</head>
+<body>
+<h2>This is a computer rendering of a Kaleidoscope.</h2>
+<hr>				
+<canvas id="cnv" width="300" height="300" style="background-color:#000000;">Sorry, your browser does not support the Canvasobject</canvas>
+<script>
+var m = confirm("Do you wish for me to draw the Kaleidoscope?");
+if (m == true)
+{
+var speed = parseFloat(prompt("What is the wanted speed?", 50));
+
+kaleidoscope(speed);
+document.write("<br>");
+document.write("Kaleidoscope is using: " + (speed) + " as the speed coefficient");
+}
+
+else{
+alert("User declined the option \n of running the kaleidoscope");
+document.write("You have declined, therefore Nothing to see");
+}
+</script>
+<hr>
+<p>Author:[Mazen Baioumy]</p>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>JavaScript Project 3</title>
+</head>
+		
+<body>
+<h3>Compound Interest Accumulation</h3>
+<hr>
+<p>Saving and re-investing the accrued interest is a common saving technique.</p>
+<p>This will show the results of saving a fixed amount at a fixed interest rate</p>
+<p>The user will enter the annual savings amount, the interest rate (<b>as a whole number</b>) and the number of years of savings.</p>
+<br>
+<p>This will show each step starting at the first year (which does not accrue interest) and every subsequent year...</p>
+<hr>
+<p><b>Sequence of numbers up to final year computed</b>:</p>
+<br>
+<script>
+function formatNumberWith2Decimals (num) {
+num = num.toFixed(2);
+return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+} 
+var Investment = (prompt("Please enter amount of money to invest per year.\n \nEnter a whole number ONLY!\nEnter 0 to exit.", 0))*1;						
+if (Investment == 0) {
+document.write("User Entered a (0) value...");
+document.write("<br>");
+document.write("Program Terminates.");
+}else if (Investment == null) {
+document.write("User Canceled...");
+document.write("<br>");
+document.write("Program Terminates.");
+}else {
+var InterestRate = (((prompt("Please enter the annual interest rate as a whole number \nbetween 0 and 100.\n \nDo NOT include the percent sign!\n \ni.e. 8 for 8% interest rate.", 0))*1)/100);
+						
+if (!(0 < InterestRate < 100)) {
+document.write("Value entered was out of range (0-100).");
+}else if (InterestRate == 0) {
+document.write("User Entered a (0) value...");
+document.write("<br>");
+document.write("Program Terminates.");
+}else if (InterestRate == null) {
+document.write("User Canceled...");
+document.write("<br>");
+document.write("Program Terminates.");
+}else {
+var YearsNumber = (prompt("Please enter the total number of years to compute interest.\n \nDo NOT exceed 30", 0)*1);
+    
+if (!(0 < YearsNumber < 30)) {
+document.write("Value entered was out of range (0-30).");
+}else if (YearsNumber == 0) {
+document.write("User Entered a (0) value...");
+document.write("<br>");
+document.write("Program Terminates.");
+}else if (YearsNumber == null) {
+document.write("User Canceled...");
+document.write("<br>");
+document.write("Program Terminates.");
+}else {					
+var tempString = "";
+var yr1 = "1: ";
+var txt = "YEAR ";
+var year1String = (txt.bold() + yr1.bold() + "$" + formatNumberWith2Decimals(Investment));
+var year1 = Investment;
+var year2 = year1 + (year1 * InterestRate);
+var year3 = year2 + (year2 * InterestRate);
+var year4 = year3 + (year3 * InterestRate);
+var year5 = year4 + (year4 * InterestRate);
+var year6 = year5 + (year5 * InterestRate);
+var year7 = year6 + (year6 * InterestRate);
+var year8 = year7 + (year7 * InterestRate);
+var year9 = year8 + (year8 * InterestRate);
+var year10 = year9 + (year9 * InterestRate);
+var year11 = year10 + (year10 * InterestRate);
+var year12 = year11 + (year11 * InterestRate);
+var year13 = year12 + (year12 * InterestRate);
+var year14 = year13 + (year13 * InterestRate);
+var year15 = year14 + (year14 * InterestRate);
+var year16 = year15 + (year15 * InterestRate);
+var year17 = year16 + (year16 * InterestRate);
+var year18 = year17 + (year17 * InterestRate);
+var year19 = year18 + (year18 * InterestRate);
+var year20 = year19 + (year19 * InterestRate);
+var year21 = year20 + (year20 * InterestRate);
+var year22 = year21 + (year21 * InterestRate);
+var year23 = year22 + (year22 * InterestRate);
+var year24 = year23 + (year23 * InterestRate);
+var year25 = year24 + (year24 * InterestRate);
+var year26 = year25 + (year25 * InterestRate);
+var year27 = year26 + (year26 * InterestRate);
+var year28 = year27 + (year27 * InterestRate);
+var year29 = year28 + (year28 * InterestRate);
+var year30 = year29 + (year29 * InterestRate);						
+
+document.write("Based on savings"+"&nbsp;"+(Investment)+"$"+"&nbsp;"+"per year for"+"&nbsp;"+(YearsNumber)+"&nbsp;"+"years at"+"&nbsp;"+(InterestRate*100)+"%"+"&nbsp;"+"interest rate this are the money earned");    
+var year = [year1, year2, year3, year4, year5, year6, year7, year8, year9, year10, year11, year12, year13, year14, year15, year16, year17, year18, year19, year20, year21, year22, year23, year24, year25, year26, year27, year28, year29, year30];
+
+document.write("<br>");
+document.write("<br>");
+document.write(year1String); 
+document.write("<br>");
+for (i=1; i <= YearsNumber; i++) {
+tempString = (txt.bold() + i.toString().bold() + ": " + "$" + formatNumberWith2Decimals(year[i-1]) + " + " + (InterestRate*100) + "% interest" + "(" + ("$" + formatNumberWith2Decimals(year[i-1]*InterestRate)) + ") added to " + "$" + formatNumberWith2Decimals(Investment) + " = $" + formatNumberWith2Decimals(year[i]));
+document.write(tempString); document.write("<br>");
+}
+}
+}
+}
+</script>
+<hr>
+<h4>SUMMARY</h4>
+<script>
+if (Investment == 0) {
+document.write("User entered (0) value.");
+}else{
+document.write("-Final total amount invested: $" + formatNumberWith2Decimals(Investment*YearsNumber)); document.write("<br>");
+document.write("-Total accumulated amount of interest earned: $" + formatNumberWith2Decimals(year[YearsNumber] - (year1))); document.write("<br>");
+document.write("-Final total amount saved: $" + formatNumberWith2Decimals(year[YearsNumber]));
+}
+</script>
+<hr>
+<p>This is the end of the results.</p>
+<p>Author:[Mazen Baioumy]</p>
+</body>
+</html>
